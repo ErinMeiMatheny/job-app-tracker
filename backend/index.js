@@ -10,48 +10,37 @@ const port = process.env.PORT || 8000;
 const cors = require("cors");
 app.use(cors());
 
-const expressSession = require("express-session");
-const SessionStore = require("express-session-sequelize")(expressSession.Store);
+// const expressSession = require("express-session");
+// const SessionStore = require("express-session-sequelize")(expressSession.Store);
 const cookieParser = require("cookie-parser");
 const Sequelize = require("sequelize");
 
 app.use(cookieParser());
 
 const myDatabase = new Sequelize(
-  "d7kqothtsc8th1",
-  "acjpymhkgnvtkd",
-  "1eae16c6bfe542413afcfaf75c03a7d5bb8fb79649e8c637ab52f648d737d834",
   {
-    host: "ec2-54-196-89-124.compute-1.amazonaws.com",
+    host: "localhost",
     dialect: "postgres",
-    sslmode: "require",
     port: 5432,
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false,
-      },
-      keepAlive: true,
-    },
-    ssl: true,
+    password: "null"
   }
 );
 
 // const myDatabase = new Sequelize("postgres://user:localhost/8000/e-commerce");
 
-const sequelizeSessionStore = new SessionStore({
-  db: myDatabase,
-});
+// const sequelizeSessionStore = new SessionStore({
+//   db: myDatabase,
+// });
 
-app.use(
-  expressSession({
-    secret: process.env.SECRET_KEY || "dev",
-    store: sequelizeSessionStore,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 60000 },
-  })
-);
+// app.use(
+//   expressSession({
+//     secret: process.env.SECRET_KEY || "dev",
+//     store: sequelizeSessionStore,
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { maxAge: 60000 },
+//   })
+// );
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
