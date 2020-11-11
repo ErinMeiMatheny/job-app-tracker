@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       date_applied: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       city: {
         type: Sequelize.STRING
@@ -26,14 +26,9 @@ module.exports = {
       company_responded: {
         type: Sequelize.BOOLEAN
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      is_deleted: {
+        type: Sequelize.BOOLEAN
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: async (queryInterface, Sequelize) => {

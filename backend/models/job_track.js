@@ -17,11 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     user_id: DataTypes.INTEGER,
     company_name: DataTypes.STRING,
     job_title: DataTypes.STRING,
-    date_applied: DataTypes.DATE,
+    date_applied: DataTypes.DATEONLY,
     city: DataTypes.STRING,
-    company_responded: DataTypes.BOOLEAN
+    company_responded: DataTypes.BOOLEAN,
+    is_deleted: DataTypes.BOOLEAN
   }, {
     sequelize,
+      timestamps: false,
+      freezeTableName: true,
     modelName: 'job_track',
   });
   return job_track;
