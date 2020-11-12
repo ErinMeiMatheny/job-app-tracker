@@ -18,12 +18,13 @@ function Signup() {
     }
     
     try {
+      setError("")
       signup(emailRef.current.value, passwordRef.current.value);
-      setLoading(false)
+      setLoading(true)
     } catch (error) {
       setError("Failed to create an account")
     }
-
+    setLoading(false)
   }
 
   return (
