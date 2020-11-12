@@ -1,5 +1,4 @@
 import "./App.css";
-import Auth from "./Components/Auth";
 import Signup from "./Components/Signup/Signup";
 import { AuthProvider } from "./Context/AuthContext";
 

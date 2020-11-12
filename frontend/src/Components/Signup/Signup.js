@@ -13,12 +13,23 @@ function Signup() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    signup(emailRef.current.value, passwordRef.current.value);
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+      return setError("Password does not match")
+    }
+    
+    try {
+      signup(emailRef.current.value, passwordRef.current.value);
+      setLoading(false)
+    } catch (error) {
+      setError("Failed to create an account")
+    }
+
   }
 
   return (
     <React.Fragment>
       <Card>
+       
         <Card.Body>
           <h3 className="text-center mb-4"> Sign Up </h3>
           {error && <Alert varient="danger">{error}</Alert>}
