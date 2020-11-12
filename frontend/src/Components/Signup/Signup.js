@@ -1,16 +1,28 @@
-import React, { useRef } from "react";
-import { Card, Button, Form } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Card, Button, Form, Alert } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
 
 function Signup() {
-  const { emailRef, passwordRef, passwordConfirmRef } = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmRef = useRef();
+  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    signup(emailRef.current.value, passwordRef.current.value);
+  }
 
   return (
     <React.Fragment>
       <Card>
         <Card.Body>
           <h3 className="text-center mb-4"> Sign Up </h3>
-          <Form>
+          {error && <Alert varient="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
@@ -21,13 +33,9 @@ function Signup() {
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control
-                type="password-confirmation"
-                ref={passwordConfirmRef}
-                required
-              />
+              <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button className="w-100" type="submit">
+            <Button disabled={loading} className="w-100" type="submit">
               Sign Up
             </Button>
           </Form>

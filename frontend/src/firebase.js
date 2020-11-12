@@ -2,14 +2,15 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const app = firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  //switch to env.local once finished - this is so Erin and Scott have firebase too
+  apiKey: "AIzaSyCN_TTVDn06mJ3cNKcTswDM5oAmNIvgF1Q",
+  authDomain: "jobtracker-29739.firebaseapp.com",
+  databaseURL: "https://jobtracker-29739.firebaseio.com",
+  projectId: "jobtracker-29739",
+  storageBucket: "jobtracker-29739.appspot.com",
+  messagingSenderId: "40412027755",
+  appId: "1:40412027755:web:b5c9ffa8bfdea4dc148a2e",
+  measurementId: "G-NLJVVJWYG0",
 });
 
 export const auth = app.auth();
