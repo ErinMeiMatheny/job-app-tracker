@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
       timestamps: false,
       freezeTableName: true,
-    modelName: 'job_track',
+      modelName: 'job_track',
   });
   return job_track;
 };
