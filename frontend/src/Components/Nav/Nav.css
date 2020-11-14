@@ -1,0 +1,43 @@
+nav {
+    background-color: rgb(101, 181, 161);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+  }
+  
+  .nav-logo {
+    width: 50px;
+    object-fit: contain;
+    margin: 10px 10px;
+  }
+  
+  /* .nav-search {
+    display: flex;
+    flex: 1;
+  } */
+  
+  /* .nav-search-input {
+    height: 12px;
+    padding: 10px;
+    border: none;
+    width: 50%;
+  }
+   */
+ 
+  
+  .nav-option {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    margin-left: 15px;
+    color: aliceblue;
+  }
+  
+
+  .nav-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
