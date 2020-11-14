@@ -16,6 +16,7 @@ router.get("/job-apps/:id", (req, res) => {
     where: {
       user_id: req.params.id,
     },
+    
   })
     .then((response) => res.send(response))
     .catch((error) => res.send("error"))
