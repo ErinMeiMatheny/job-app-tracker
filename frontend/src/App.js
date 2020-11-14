@@ -3,6 +3,7 @@ import "./App.css";
 import Signin from "./Components/Signin/Signin"
 import Signup from "./Components/Signup/Signup";
 import Home from "./Components/Home/Home"
+import HiddenRoute from "./Components/HiddenRoute"
 
 //State
 import { AuthProvider } from "./Context/AuthContext";
@@ -25,7 +26,7 @@ function App() {
           <Router>
             <AuthProvider>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <HiddenRoute exact path="/" component={Home} />
               <Route path="/signup" component={Signup} />
               <Route path="/signin" component={Signin} />
             </Switch>
