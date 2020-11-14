@@ -1,19 +1,16 @@
-import React from 'react'
-import { Route, Redirect} from "react-router-dom"
+import React from "react"
+import { Route, Redirect } from "react-router-dom"
 import { useAuth } from "../Context/AuthContext"
 
-export default function HiddenRoute({component: Components, ...rest}) {
+export default function HiddenRoute({ component: Component, ...rest }) {
+  const { currentUser } = useAuth()
 
-const {currentUser} = useAuth()
-
-    return (
-        <Route>
-            {...rest}
-            render={props => {
-               return currentUser ? <Components {...props} /> :<Redirect to="/login"></Redirect>
-            }}
-        </Route>
-    )
+  return (
+    <Route
+      {...rest}
+      render={props => {
+        return currentUser ? <Component {...props} /> : <Redirect to="/Home" />
+      }}
+    ></Route>
+  )
 }
-
-

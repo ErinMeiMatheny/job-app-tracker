@@ -4,6 +4,8 @@ import Signin from "./Components/Signin/Signin"
 import Signup from "./Components/Signup/Signup";
 import Home from "./Components/Home/Home"
 import HiddenRoute from "./Components/HiddenRoute"
+import LandingPage from "./Components/Landing Page/LandingPage"
+import Nav from "./Components/Nav/Nav"
 
 //State
 import { AuthProvider } from "./Context/AuthContext";
@@ -18,23 +20,24 @@ import { Container } from "react-bootstrap";
 function App() {
   return (
     
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+       
           <Router>
             <AuthProvider>
+              <Nav />
+              <div className="w-100" style={{ maxWidth: "400px" }}>
             <Switch>
-              <HiddenRoute exact path="/" component={Home} />
+              <Route exact path="/" component={LandingPage} />
               <Route path="/signup" component={Signup} />
               <Route path="/signin" component={Signin} />
+              <HiddenRoute path="/home" component={Home} />
+
             </Switch>
+            </div>
             </AuthProvider>
           </Router>
           
-        </div>
-      </Container>
+    
+      
     
   );
 }

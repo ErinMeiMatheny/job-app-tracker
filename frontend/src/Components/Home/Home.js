@@ -19,7 +19,7 @@ export default function Home() {
 
         try {
             await signOut()
-            history.push("/login")
+            history.push("/signin")
         } catch (error) {
             setError("Failed signout")
         }

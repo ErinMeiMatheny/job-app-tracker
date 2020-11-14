@@ -21,7 +21,7 @@ function Signin() {
       setError("")
       setLoading(true)
       signin(emailRef.current.value, passwordRef.current.value);
-      history.push('/')
+      history.push('/Home')
     } catch (error) {
       setError("Problems with signin!")
     }
