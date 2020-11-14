@@ -37,6 +37,24 @@ router.post("/job-apps", (req, res) => {
 
 });
 
+//change employer response
+router.put("/employer-response/:id", (req, res) => {
+  db.job_track
+    .update( 
+       {
+      company_responded: Sequelize.literal('NOT company_responded')
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    )
+    .then((results) => res.send(results))
+    .catch((err) => alert(err));
+});
+
+
 //delete job 
 router.put("/job-apps/:id", (req, res) => {
   
