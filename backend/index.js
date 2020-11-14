@@ -10,19 +10,23 @@ const port = process.env.PORT || 8000;
 const cors = require("cors");
 app.use(cors());
 
+
 // const expressSession = require("express-session");
 // const SessionStore = require("express-session-sequelize")(expressSession.Store);
+
 const cookieParser = require("cookie-parser");
 const Sequelize = require("sequelize");
 
 app.use(cookieParser());
 
 const myDatabase = new Sequelize(
+
   {
     host: "localhost",
     dialect: "postgres",
     port: 5432,
     password: "null"
+
   }
 );
 
@@ -65,4 +69,6 @@ db.sequelize
   })
   .catch((err) => {
     console.error("Unable to connect to the database:", err);
+
   });
+
