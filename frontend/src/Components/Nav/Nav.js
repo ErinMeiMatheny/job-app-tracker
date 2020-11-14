@@ -18,9 +18,9 @@ function Nav() {
         />
       </Link>
       {/* search bar */}
-      <div className="nav-search">
+      {/* <div className="nav-search">
         <input type="text" className="nav-search-input" />
-      </div>
+      </div> */}
       {/* 3 links */}
 
       <div className="nav-nav">

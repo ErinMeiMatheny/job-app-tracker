@@ -24,7 +24,7 @@ function App() {
           <Router>
             <AuthProvider>
               <Nav />
-              <div className="w-100" style={{ maxWidth: "400px" }}>
+              
             <Switch>
               <Route exact path="/" component={LandingPage} />
               <Route path="/signup" component={Signup} />
@@ -32,7 +32,7 @@ function App() {
               <HiddenRoute path="/home" component={Home} />
 
             </Switch>
-            </div>
+            
             </AuthProvider>
           </Router>
           

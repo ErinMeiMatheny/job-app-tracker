@@ -14,23 +14,23 @@ nav {
     margin: 10px 10px;
   }
   
-  .nav-search {
+  /* .nav-search {
     display: flex;
     flex: 1;
-  }
+  } */
   
-  .nav-search-input {
+  /* .nav-search-input {
     height: 12px;
     padding: 10px;
     border: none;
     width: 50%;
   }
-  
+   */
  
   
   .nav-option {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-right: 15px;
     margin-left: 15px;
     color: aliceblue;
@@ -40,9 +40,4 @@ nav {
   .nav-nav {
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .nav-cart-count {
-    margin-left: 15px;
-    padding-right: 5px;
   }

@@ -34,8 +34,8 @@ export default function Home() {
             <Card.Body>
             <h3 className="text-center mb-4"> Your Profile </h3>
             {error && <Alert varient="danger">{error}</Alert>}
-            <strong>Email:</strong>{currentUser.email}
-            <Link to="/update-profile" className="w-100 btn btn-primary mt-5">Update Profile</Link>
+            
+            
             </Card.Body>
         </Card>
         <div className="w-110 text-center mt3">

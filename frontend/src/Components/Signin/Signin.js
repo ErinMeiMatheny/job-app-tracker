@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Card, Button, Form, Alert } from "react-bootstrap";
+import { Container, Card, Button, Form, Alert } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthContext";
 import { Link, useHistory} from "react-router-dom"
 
@@ -11,17 +11,16 @@ function Signin() {
   const [loading, setLoading] = useState(false);
   const history = useHistory()
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-
-
- 
     
     try {
       setError("")
       setLoading(true)
-      signin(emailRef.current.value, passwordRef.current.value);
+      await signin(emailRef.current.value, passwordRef.current.value);
+      console.log("I shouldn't be redirecting")
       history.push('/Home')
+      
     } catch (error) {
       setError("Problems with signin!")
     }
@@ -30,7 +29,8 @@ function Signin() {
 
   return (
     <React.Fragment>
-      <Card>
+      <Container>
+      <Card className="mt-5">
        
         <Card.Body>
           <h3 className="text-center mb-4"> Sign In </h3>
@@ -44,7 +44,7 @@ function Signin() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-50 justify" type="submit">
               Sign In
             </Button>
           </Form>
@@ -53,6 +53,7 @@ function Signin() {
       <div className="w-110 text-center mt3">
         <Link to="/signup">Register Today!</Link>
       </div>
+      </Container>
     </React.Fragment>
   );
 }

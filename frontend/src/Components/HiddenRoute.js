@@ -9,7 +9,7 @@ export default function HiddenRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={props => {
-        return currentUser ? <Component {...props} /> : <Redirect to="/Home" />
+        return currentUser ? <Component {...props} /> : <Redirect to="/" />
       }}
     ></Route>
   )

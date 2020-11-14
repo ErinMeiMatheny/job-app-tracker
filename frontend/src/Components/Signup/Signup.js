@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Container, Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../../Context/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 
@@ -33,7 +33,8 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
+      <Container fluid="md">
+      <Card className="mt-5 w-100">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -59,6 +60,7 @@ export default function Signup() {
       <div className="w-100 text-center mt-2">
         Already have an account? <Link to="/signin">Log In</Link>
       </div>
+      </Container>
     </>
   )
 }
