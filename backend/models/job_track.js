@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     job_title: DataTypes.STRING,
     date_applied: DataTypes.DATEONLY,
     city: DataTypes.STRING,
-    company_responded: DataTypes.BOOLEAN, 
+    company_responded: DataTypes.BOOLEAN,
     is_deleted: DataTypes.BOOLEAN
   }, {
     sequelize,

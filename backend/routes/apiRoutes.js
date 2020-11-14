@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { Op } = require("sequelize");
+
 const Sequelize = require("sequelize");
 
 //Backend running
@@ -18,9 +19,11 @@ router.get("/job-apps/:id", (req, res) => {
     },
     
   })
+
     .then((response) => res.send(response))
     .catch((error) => res.send("error"))
 })
+
 
 //add jobs for user
 router.post("/job-apps", (req, res) => {
@@ -77,3 +80,4 @@ router.put("/job-apps/:id", (req, res) => {
 
 
 module.exports = router;
+
